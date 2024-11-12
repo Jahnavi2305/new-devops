@@ -1,7 +1,7 @@
 #!/bin/bash
 
-x=23
-y=23
-z= $((x+y))
+echo "please enter name"
 
-echo "$z"
+read USERNAME
+
+echo " the name is  $USERNAME"
