@@ -25,15 +25,16 @@ VALIDATE(){
 
 CHECK_ROOT
 
-for PACKAGE in $@ #will take all the values from the termainal
-do 
-   dnf list installed $PACKAGE
-   if [ $? -ne 0]
-   then 
-      echo " $PACKAGE is not installed,going to install"
-       dnf install $PACKAGE -y
-       VALIDATE $? "Installing $PACKAGE"
-      else
-    echo "$PACKAGE is already installed..nothing to do"
+# sh 15-loops.sh git mysql postfix nginx
+for package in $@ # $@ refers to all arguments passed to it
+do
+    dnf list installed $package
+    if [ $? -ne 0 ]
+    then
+        echo "$package is not installed, going to install it.."
+        dnf install $package -y
+        VALIDATE $? "Installing $package"
+    else
+        echo "$package is already installed..nothing to do"
     fi
 done
