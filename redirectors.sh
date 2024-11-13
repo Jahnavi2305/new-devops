@@ -16,7 +16,7 @@ USERID=$(id -u) #will give the used id id it is sudo then O or 1001 /1002..
 CHECK_ROOT(){    #this function is to check whether command is run with root access or not , if not exit
     if[ $USERID -ne 0 ]
     then 
-      echo -e "$Rplease run the script with root priveleges $N"
+      echo -e "$R please run the script with root priveleges $N"
       exit 1
     fi
 
