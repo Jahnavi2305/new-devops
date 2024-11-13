@@ -5,4 +5,4 @@ NUMBER2=$23
 
 sum = $(($NUMBER1 + $NUMBER2))
 
-echo "$sun"
+echo "$sum"
