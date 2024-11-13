@@ -1,5 +1,5 @@
 #!/bin/bash
-Number=1
+read Number
 
 if [ $Number -gt 20 ]
 then 
